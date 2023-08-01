@@ -16,34 +16,46 @@ function displayCartItems() {
 
         let cart = JSON.parse(localStorage.getItem("cart"))
 
+        if (cart != null) {
+            for (const item of cart) {
+                const total = calculateTotalPrice(item);
+                totalAmount += total;
 
-        for (const item of cart) {
-            const total = calculateTotalPrice(item);
-            totalAmount += total;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${item.product}</td>
+                <td>${item.quantity}</td>
+                <td>$${item.price.toFixed(2)}</td>
+                <td>$${total.toFixed(2)}</td>
+                `;
+                cartBody.appendChild(row);
+            }
 
-            const row = document.createElement('tr');
-            row.innerHTML = `
-            <td>${item.product}</td>
-            <td>${item.quantity}</td>
-            <td>$${item.price.toFixed(2)}</td>
-            <td>$${total.toFixed(2)}</td>
+            // Add a row to display the total amount
+            const totalRow = document.createElement('tr');
+            totalRow.innerHTML = `
+                <td colspan="3">Total:</td>
+                <td>$${totalAmount.toFixed(2)}</td>
             `;
-            cartBody.appendChild(row);
+            cartBody.appendChild(totalRow);
         }
-
-        // Add a row to display the total amount
-        const totalRow = document.createElement('tr');
-        totalRow.innerHTML = `
-            <td colspan="3">Total:</td>
-            <td>$${totalAmount.toFixed(2)}</td>
-        `;
-        cartBody.appendChild(totalRow);
 
     } else {
         console.log("No cart items to display")
     }
     
 }
+
+let checkout = document.getElementById("checkout")
+
+checkout.addEventListener('click', (event) => {
+    event.preventDefault();
+    
+    localStorage.clear()
+    location.reload()
+    
+});
+
 
   // Call the displayCartItems function to populate the cart page
 
