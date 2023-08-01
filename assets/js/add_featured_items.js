@@ -1,6 +1,5 @@
 
-
-product_description = {
+product_descriptions = {
     "prod_1": {
         "product_id": "Prod_104",
         "unit_price": 15,
@@ -50,55 +49,25 @@ product_description = {
     }
 }
 
-
-function add_product_details(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const prodId = urlParams.get('prod');
-    product = product_description[prodId];
-
-    product_name = document.getElementsByClassName("product-name")[0]
-    product_price = document.getElementsByClassName("product-price")[0]
-    product_desc = document.getElementsByClassName("product-desc")[0]
-
-    first_img = document.getElementById("first_img")
-    second_img = document.getElementById("second_img")
-    
-    first_img.src = `assets/images/lumi-0${prodId.slice(-1)}-01.jpg`
-    
-    second_img.src = `assets/images/lumi-0${prodId.slice(-1)}-02.jpg`
-
-
-
-    if (!["prod_5", "prod_6"].includes(prodId)) {
-        third_img = document.getElementById("third_img")
-        third_img.src = `assets/images/lumi-0${prodId.slice(-1)}-03.jpg`
-    }
-    
-   
-
-    product_name.innerHTML = `${product.title}`;
-    product_price.innerHTML = `€${product.unit_price}`;
-    product_desc.innerHTML = `${product.desc}`;
-
-    const product_suggestions = document.getElementById("recommendation")
-    product_suggestions.innerHTML = ''
-    prodlist = Object.keys(product_description)
+function add_featured_items(){
+    const featured_items = document.getElementById("featured_item")
+    featured_items.innerHTML = ''
+    prodlist = Object.keys(product_descriptions)
     console.log(prodlist)
     for (const prod of prodlist) {
-        if (prod != prodId){
-            const a = document.createElement('a')
-            a.setAttribute("href", `product_detail.html?prod=${prod}`)
-            prod_feature = product_description[prod]
-            a.innerHTML = `
-            <div class="featured-item">
-                <img src="assets/images/lumi-0${prod.slice(-1)}-01.jpg" alt="Item 1">
-                <h4>${prod_feature.short_title}</h4>
-                <h6>€${prod_feature.unit_price}</h6>
-            </div>
-            `
-            product_suggestions.appendChild(a);
-        }
+        const a = document.createElement('a')
+        a.setAttribute("href", `product_detail.html?prod=${prod}`)
+        prod_feature = product_descriptions[prod]
+        a.innerHTML = `
+        <div class="featured-item">
+            <img src="assets/images/lumi-0${prod.slice(-1)}-01.jpg" alt="Item 1">
+            <h4>${prod_feature.short_title}</h4>
+            <h6>€${prod_feature.unit_price}</h6>
+        </div>
+        `
+        featured_items.appendChild(a);
     } 
+
 }
 
-add_product_details();
+add_featured_items()
