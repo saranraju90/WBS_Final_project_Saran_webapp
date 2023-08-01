@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-  <title>LUMI OUTFITS - Product Detail</title>
+  <title>LUMI OUTFITS - Ecommerce HTML5 Template</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="assets/css/tooplate-main.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/flex-slider.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/checkout-button.css">
+  <!-- <link rel="stylesheet" href="assets/css/cart.css"> -->
+
+
   <!--
 Tooplate 2114 LUMI OUTFITS
 https://www.tooplate.com/view/2114-LUMI OUTFITS
@@ -40,136 +45,52 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="products.html">Products
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="products.html">Products</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  </li>
 
   <!-- Page Content -->
-  <!-- Single Starts Here -->
-  <div class="single-product">
+<!-- Cart Page Starts Here -->
+<div class="cart-page">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Single Product</h1>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="product-slider">
-            <div id="slider" class="flexslider">
-              <ul class="slides">
-                <li>
-                  <img src="assets/images/lumi-04-01.avif" />
-                </li>
-                <li>
-                  <img src="assets/images/lumi-04-02.avif" />
-                </li>
-                <li>
-                  <img src="assets/images/lumi-04-03.avif" />
-                </li>
-                <!-- items mirrored twice, total of 12 -->
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="right-content">
-            <h4>Single Product Name</h4>
-            <h6>€55.00</h6>
-            <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu.
-              Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id,
-              dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
-            <span>7 left on stock</span>
-            <form action="" method="get">
-              <label for="quantity">Quantity:</label>
-              <input name="quantity" type="quantity" class="quantity-text" id="quantity"
-                onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
-                value="1">
-              <input type="submit" class="button" value="Add To Cart">
-            </form>
-            <div class="down-content">
-              <div class="categories">
-                <h6>Category: <span><a href="#">Pants</a>,<a href="#">Women</a>,<a href="#">Lifestyle</a></span></h6>
-              </div>
-              <div class="share">
-                <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
-                        class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Single Page Ends Here -->
-
-
-  <!-- Similar Starts Here -->
-  <div class="featured-items">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h1>You May Also Like</h1>
+            <h1>Your Shopping Cart</h1>
           </div>
         </div>
         <div class="col-md-12">
-          <div class="owl-carousel owl-theme">
-            <a href="product-01">
-              <div class="featured-item">
-                <img src="assets/images/lumi-01-01.jpg" alt="Item 1">
-                <h4>Proin vel ligula</h4>
-                <h6>€15.00</h6>
-              </div>
-            </a>
-            <a href="product-02.html">
-              <div class="featured-item">
-                <img src="assets/images/lumi-02-01.jpg" alt="Item 2">
-                <h4>Erat odio rhoncus</h4>
-                <h6>€25.00</h6>
-              </div>
-            </a>
-            <a href="product-03.html">
-              <div class="featured-item">
-                <img src="assets/images/lumi-03-01.avif" alt="Item 3">
-                <h4>Integer vel turpis</h4>
-                <h6>€35.00</h6>
-              </div>
-            </a>
-            <a href="product-05.html">
-              <div class="featured-item">
-                <img src="assets/images/lumi-05-01.webp" alt="Item 4">
-                <h4>Sed purus quam</h4>
-                <h6>€45.00</h6>
-              </div>
-            </a>
-            <a href="product-06.html">
-              <div class="featured-item">
-                <img src="assets/images/lumi-06-01.webp" alt="Item 5">
-                <h4>Morbi aliquet</h4>
-                <h6>€55.00</h6>
-              </div>
-            </a>
-          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="cart-body">
+              <!-- Cart items will be populated here -->
+            </tbody>
+          </table>
         </div>
+        <button class="button"><span>Checkout</span></button>
       </div>
     </div>
   </div>
-  <!-- Similar Ends Here -->
+  <!-- Cart Page Ends Here -->
+
 
 
   <!-- Subscribe Form Starts Here -->
@@ -184,8 +105,8 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
         </div>
         <div class="col-md-8 offset-md-2">
           <div class="main-content">
-            <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
-              celiac readymade vice.</p>
+            <p>Integer vel turpis ultricies, lacinia ligula id, lobortis augue. Vivamus porttitor dui id dictum
+              efficitur. Phasellus vel interdum elit.</p>
             <div class="container">
               <form id="subscribe" action="" method="get">
                 <div class="row">
@@ -218,11 +139,6 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="logo">
-            <img src="assets/images/lumi-logo.png" alt="">
-          </div>
-        </div>
         <div class="col-md-12">
           <div class="footer-menu">
             <ul>
@@ -268,12 +184,6 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
 
 
   <!-- Additional Scripts -->
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/owl.js"></script>
-  <script src="assets/js/isotope.js"></script>
-  <script src="assets/js/flex-slider.js"></script>
-
-
   <script language="text/Javascript">
     cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
     function clearField(t) {                   //declaring the array outside of the
@@ -284,7 +194,9 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
       }
     }
   </script>
-
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/owl.js"></script>
+ 
 
 </body>
 

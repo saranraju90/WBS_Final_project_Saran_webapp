@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="assets/css/tooplate-main.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/flex-slider.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+
   <!--
 Tooplate 2114 LUMI OUTFITS
 https://www.tooplate.com/view/2114-LUMI OUTFITS
@@ -55,7 +57,9 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
       </div>
     </div>
   </nav>
-
+  <a href="cart.html">
+    <div class="cart-image"></div>
+  </a>
   <!-- Page Content -->
   <!-- Single Starts Here -->
   <div class="single-product">
@@ -72,10 +76,13 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
             <div id="slider" class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="assets/images/lumi-06-01.webp" />
+                  <img id="first_img" src="" />
                 </li>
                 <li>
-                  <img src="assets/images/lumi-06-02.webp" />
+                  <img id="second_img" src="" />
+                </li>
+                <li>
+                  <img id ="third_img" src="" />
                 </li>
                 <!-- items mirrored twice, total of 12 -->
               </ul>
@@ -84,18 +91,15 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
         </div>
         <div class="col-md-6">
           <div class="right-content">
-            <h4>Single Product Name</h4>
-            <h6>€55.00</h6>
-            <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu.
-              Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id,
-              dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
-            <span>7 left on stock</span>
-            <form action="" method="get">
+            <h4 class="product-name"></h4>
+            <h6 class="product-price"></h6>
+            <p class="product-desc"> </p>
+            <form action="" method="get" id="product-add">
               <label for="quantity">Quantity:</label>
               <input name="quantity" type="quantity" class="quantity-text" id="quantity"
                 onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
                 value="1">
-              <input type="submit" class="button" value="Add To Cart">
+                <button type="submit" class="button" value="Add To Cart">Add To Cart </button>
             </form>
             <div class="down-content">
               <div class="categories">
@@ -126,38 +130,45 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
         </div>
         <div class="col-md-12">
           <div class="owl-carousel owl-theme">
-            <a href="product-01">
+            <a href="product_detail.html?prod=prod_1">
               <div class="featured-item">
                 <img src="assets/images/lumi-01-01.jpg" alt="Item 1">
-                <h4>Proin vel ligula</h4>
+                <h4>Long white dress with green Floral Elegance</h4>
                 <h6>€15.00</h6>
               </div>
             </a>
-            <a href="product-02.html">
+            <a href="product_detail.html?prod=prod_2">
               <div class="featured-item">
-                <img src="assets/images/lumi-02-01.jpg" alt="Item 2">
-                <h4>Erat odio rhoncus</h4>
+                <img src="assets/images/lumi-02-01.jpg" alt="Item 1">
+                <h4>Handmade Midi Flared cotton dress/ vintage dress / spring / summer</h4>
+                <h6>€15.00</h6>
+              </div>
+            </a>
+            <a href="product_detail.html?prod=prod_3">
+              <div class="featured-item">
+                <img src="assets/images/lumi-03-01.jpg" alt="Item 2">
+                <h4>Palestinian Thobe Tatreez Embroidery Dress White And Red Women's Dress</h4>
                 <h6>€25.00</h6>
               </div>
             </a>
-            <a href="product-03.html">
+            <a href="product_detail.html?prod=prod_4">
               <div class="featured-item">
-                <img src="assets/images/lumi-03-01.avif" alt="Item 3">
-                <h4>Integer vel turpis</h4>
+                <img src="assets/images/lumi-04-01.jpg" alt="Item 3">
+                <h4>Habesha| Greenish Fashionable Menen|Ethiopian Traditional Dress|</h4>
                 <h6>€35.00</h6>
               </div>
             </a>
-            <a href="product-04.html">
+            <a href="product_detail.html?prod=prod_5">
               <div class="featured-item">
-                <img src="assets/images/lumi-04-01.avif" alt="Item 4">
-                <h4>Sed purus quam</h4>
+                <img src="assets/images/lumi-05-01.jpg" alt="Item 4">
+                <h4>Habesha| Blackish golden Fashionable Menen|Ethiopian Traditional Dress|</h4>
                 <h6>€45.00</h6>
               </div>
             </a>
-            <a href="product-05.html">
+            <a href="product_detail.html?prod=prod_6">
               <div class="featured-item">
-                <img src="assets/images/lumi-05-01.webp" alt="Item 5">
-                <h4>Morbi aliquet</h4>
+                <img src="assets/images/lumi-06-01.jpg" alt="Item 5">
+                <h4>Vintage African long dress</h4>
                 <h6>€55.00</h6>
               </div>
             </a>
@@ -265,6 +276,8 @@ https://www.tooplate.com/view/2114-LUMI OUTFITS
 
 
   <!-- Additional Scripts -->
+  <script src="assets/js/add_cart.js"> </script>
+  <script src="assets/js/product_detail.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/owl.js"></script>
   <script src="assets/js/isotope.js"></script>
